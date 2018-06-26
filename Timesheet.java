@@ -10,19 +10,28 @@ public class Timesheet {
 	{
 		this.driver=driver;
 	}
-	public String verify_page()
+	public WebElement verify_page()
 	{
+		try {
+			Thread.sleep(1000);
+			System.out.println("sleeping");
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		
-		String icon=driver.findElement(By.id("dvSearchBox")).getAttribute("class");
-		return icon;
+	/*	String icon=driver.findElement(By.id("dvSearchBox")).getAttribute("class");
+		return icon;*/
+		WebElement element=driver.findElement(By.className("emp_time"));
+		return element;
 		
 	}
-	public boolean issucessfullogin()
+	/*public boolean issucessfullogin()
 	{
 		String att=verify_page();
 		return att.equals("search-box");
 	}
-	
+	*/
 	
 
 }
